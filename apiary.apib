@@ -1,0 +1,58 @@
+FORMAT: 1A
+HOST: http://api.spiderlog.net/
+
+# Spider Log API
+Provides services for the Spider Log app family, recording the world's spider sightings.
+
+## Group Spiders
+Access to Spider resources
+
+## My Spiders [/spiders{?page,size}]
+### Get all my spider sightings [GET]
+
+    + Parameters
+        + page (required, number 1)... page number
+        + page (required, number 10)... page size
+        
+    + Header
+        
+            Authorization: Basic dXNlcjpwYXNzd29yZA==
+    
++ Response 200 (application/json)
+        
+        {
+            "page" :
+            {
+                "number" : 1,
+                "size" : 10,
+                "totalPages" : 20
+            },
+            "spiders" :
+            [
+                {
+                    "sightedAt" : "2014-08-29T07:00",
+                    "imageUrl" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Theraphosa_blondi_MHNT.jpg/220px-Theraphosa_blondi_MHNT.jpg",
+                    "description" : "Spider I saw on the train",
+                    "tags" : [
+                        "str1py"
+                    ]
+                },
+                {
+                    "sightedAt" : "2014-08-29T13:00",
+                    "imageUrl" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Theraphosa_blondi_MHNT.jpg/220px-Theraphosa_blondi_MHNT.jpg",
+                    "description" : "Spider I saw at the office",
+                    "tags" : [
+                        "b1g"
+                    ]
+                },
+                {
+                    "sightedAt" : "2014-08-29T19:00",
+                    "imageUrl" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Theraphosa_blondi_MHNT.jpg/220px-Theraphosa_blondi_MHNT.jpg",
+                    "description" : "Spider I saw at home",
+                    "tags" : [
+                        "b1g",
+                        "str1py"
+                    ]
+                }
+            ]
+        }
